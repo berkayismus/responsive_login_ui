@@ -5,32 +5,31 @@ class MyTextFormField extends StatelessWidget {
   final String labelText;
   final String hintText;
   final Icon leadingIcon;
-  final Function onSaved;
-  final Function onChanged;
   final Function validator;
   final bool obscureText;
   final IconButton suffixIcon;
+  final TextEditingController controller;
 
-  MyTextFormField(
-      {@required this.labelText,
-      this.leadingIcon,
-      this.hintText,
-      @required this.onSaved,
-      this.validator,
-      this.obscureText,
-      this.suffixIcon,
-      this.onChanged});
+  MyTextFormField({
+    @required this.labelText,
+    @required this.controller,
+    this.leadingIcon,
+    this.hintText,
+    this.validator,
+    this.obscureText,
+    this.suffixIcon,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       obscureText: obscureText ?? false,
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 24.0,
         color: Colors.black,
       ),
-      onChanged: onChanged ?? (value) {},
       decoration: InputDecoration(
         errorStyle: TextStyle(
           fontSize: 18.0,
@@ -47,7 +46,6 @@ class MyTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(30.0),
         ),
       ),
-      onSaved: onSaved ?? (value) => {},
       validator: validator ??
           (String value) {
             // return value.contains('@') ? 'Do not use the @ char.' : null;

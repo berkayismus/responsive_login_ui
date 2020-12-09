@@ -63,10 +63,9 @@ class LoginView extends StatelessWidget {
                                     right: 16.0,
                                     bottom: 10.0),
                                 child: MyTextFormField(
+                                  controller:
+                                      loginController.getUserEmailController,
                                   labelText: 'Eposta',
-                                  onChanged: (value) {
-                                    loginController.userEmail = value;
-                                  },
                                   validator: loginController.emailValidator,
                                 ),
                               ),
@@ -83,13 +82,12 @@ class LoginView extends StatelessWidget {
                                     right: 16.0,
                                     bottom: 12.0),
                                 child: MyTextFormField(
+                                  controller:
+                                      loginController.getUserPasswordController,
                                   labelText: 'Parola',
                                   validator: loginController.passwordValidator,
                                   obscureText:
                                       loginController.passwordView.value,
-                                  onChanged: (value) {
-                                    loginController.userPassword = value;
-                                  },
                                   leadingIcon: Icon(FontAwesomeIcons.key),
                                   suffixIcon: IconButton(
                                     icon: Icon(
