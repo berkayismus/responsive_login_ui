@@ -9,7 +9,7 @@ Free to use. You may use as you wish
 
 ## How does app look?
 
-![app snapshot](https://www.linkpicture.com/q/login_ui_snap_2.png)
+![app snapshot](https://i.ibb.co/10CfpFf/Ekran-Al-nt-s.jpg)
 
 ## What used
 
